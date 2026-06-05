@@ -495,8 +495,7 @@ async function carregarPartidos() {
 
 async function carregarProposicoes() {
   const res = await fetch(
-    `${SUPABASE_URL}/rest/v1/proposicoes_com_tema?select=id,siglaTipo,ementa,tema,dataApresentacao&tema=not.is.null&order=dataApresentacao.desc&limit=10`,
-    { headers }
+`${SUPABASE_URL}/rest/v1/proposicoes_com_tema?select=id,siglaTipo,ementa,tema,dataApresentacao&tema=neq.Sem%20Classifica%C3%A7%C3%A3o&order=dataApresentacao.desc&limit=10`,    { headers }
   );
   const data = await res.json();
 
